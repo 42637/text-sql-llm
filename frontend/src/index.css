@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #FFFFFF;
+    --bg-sidebar: #F7F7F8;
+    --text-primary: #202123;
+    --text-secondary: #6B7280;
+    --border-color: #E5E7EB;
+    --btn-primary: #202123;
+    --btn-text: #FFFFFF;
+  }
+
+  .dark {
+    --bg-main: #131314;
+    --bg-sidebar: #1E1F20;
+    --text-primary: #E3E3E3;
+    --text-secondary: #9E9E9E;
+    --border-color: #333538;
+    --btn-primary: #E3E3E3;
+    --btn-text: #131314;
+  }
+}
+
+/* Custom scrollbars inspired by ChatGPT */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4B5563;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Monospace font styling for SQL editors and code blocks */
+code, pre, .font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}

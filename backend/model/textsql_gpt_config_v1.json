@@ -1,0 +1,65 @@
+{
+    "model_name": "TextSQL-GPT-v1",
+    "architecture": "decoder_only_transformer",
+    "vocab_size": 16000,
+    "tokenizer_type": "ByteLevelBPE",
+    "tokenizer_path": "/content/drive/MyDrive/text-sql_llm/tokenizer/bpe_v1/tokenizer.json",
+    "special_token_ids": {
+        "<|unk|>": 0,
+        "<|pad|>": 1,
+        "<|question|>": 2,
+        "<|schema|>": 3,
+        "<|sql|>": 4,
+        "<|endoftext|>": 5
+    },
+    "context_length": 2048,
+    "d_model": 512,
+    "n_layers": 8,
+    "n_heads": 8,
+    "head_dim": 64,
+    "d_ff": 2048,
+    "dropout": 0.1,
+    "learned_positional_embeddings": true,
+    "tie_word_embeddings": true,
+    "causal_attention": true,
+    "attention_implementation": "scaled_dot_product_attention",
+    "output_type": "next_token_logits",
+    "generation_target": "SQL",
+    "training_defaults": {
+        "batch_size": 1,
+        "gradient_accumulation_steps": 16,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.1,
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "gradient_clip": 1.0,
+        "mixed_precision": "auto"
+    },
+    "initialization": "random_from_scratch",
+    "pretrained_weights": false,
+    "created_at_utc": "2026-11-05T04:14:06.925401+00:00",
+    "dataset": {
+        "path": "/content/drive/MyDrive/text-sql_llm/datasets/processed/final_v3",
+        "train_records": 203648,
+        "validation_records": 11501,
+        "test_records": 10996,
+        "total_records": 226145
+    },
+    "hardware_at_configuration_time": {
+        "device": "cpu",
+        "gpu_name": null,
+        "gpu_memory_gb": 0,
+        "pytorch_version": "2.11.0+cpu"
+    },
+    "parameter_estimate": {
+        "token_embeddings": 8192000,
+        "positional_embeddings": 1048576,
+        "attention_per_block": 1048576,
+        "feed_forward_per_block": 2097152,
+        "layer_norms_per_block": 2048,
+        "all_transformer_blocks": 25182208,
+        "final_layer_norm": 1024,
+        "total_parameters_estimate": 34423808,
+        "total_parameters_millions": 34.424
+    }
+}

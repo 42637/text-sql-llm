@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: textsql-gpt-backend
+    runtime: python
+    buildCommand: "pip install --upgrade pip && pip install -r backend/requirements.txt"
+    startCommand: "uvicorn app:app --app-dir backend --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /health
+    plan: starter  # 1 GB RAM recommended for PyTorch model inference (or free tier)
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: ALLOWED_ORIGINS
+        value: "*"
+      - key: MODEL_DIR
+        value: backend/model
